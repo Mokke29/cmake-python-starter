@@ -1,12 +1,6 @@
 
 import time
-# Optional packages
-try:
-    from colorama import Fore, Style
-    no_additional_python_packages = False
-except:
-    no_additional_python_packages = True
-    pass
+from colorama import Fore, Style
 
 
 def m_perf(func):
@@ -33,10 +27,7 @@ def m_perf(func):
 
         duration_ms = (end_time - start_time) * 1000
         time_string = f"[m_perf] {func.__name__}: {duration_ms} ms"
-        if (no_additional_python_packages):
-            print(time_string)
-        else:
-            print(f"{Fore.CYAN}{time_string}{Style.RESET_ALL}")
+        print(f"{Fore.LIGHTMAGENTA_EX}{time_string}{Style.RESET_ALL}")
 
         return result
 
